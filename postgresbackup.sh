@@ -4,6 +4,8 @@
 ## Configuration ##
 ###################
 
+docker=postgres14 #container name of the PG databases
+admin=gabe_psadmin #admin user of PG
 bu_keep_days=7 #number of days to keep
 db_path=/PATH TO DB BACKUPS/ #path to save backups
 today=$(date +"%Y%m%d%H%M") #Date to name backups - YearMonthDayHourMinute
@@ -18,8 +20,8 @@ backup() {
 printf "Backup Postgres Database '%s'\n" "${db_path}${today}.postgres-backup.sql.gz" 
 
 
-docker exec -i postgres14 /usr/bin/pg_dumpall \
- -U gabe_psadmin  | gzip -9 > ${db_path}${today}.postgres-backup.sql.gz
+docker exec -i ${docker} /usr/bin/pg_dumpall \
+ -U ${admin}  | gzip -9 > ${db_path}${today}.postgres-backup.sql.gz
  
 chown -R $user:$group ${db_path}
 
