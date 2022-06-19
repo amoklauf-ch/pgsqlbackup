@@ -5,7 +5,7 @@
 ###################
 
 docker=postgres14 #container name of the PG databases
-admin=gabe_psadmin #admin user of PG
+admin=admin_user #admin user of PG
 bu_keep_days=7 #number of days to keep
 db_path=/PATH TO DB BACKUPS/ #path to save backups
 today=$(date +"%Y%m%d%H%M") #Date to name backups - YearMonthDayHourMinute
