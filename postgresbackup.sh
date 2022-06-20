@@ -51,7 +51,7 @@ printf "Deleting all backups older than ${bu_keep_days} days\n"
 				"value": "'${size}'MB"
 				},
 				{
-				"name": "Houseworking:",
+				"name": "Housecleaning:",
 				"value": ":white_check_mark:"
 				}
             ],
